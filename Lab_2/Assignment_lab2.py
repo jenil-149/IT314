@@ -27,7 +27,7 @@ if not (os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")):
     )
 
 llm = ChatGoogleGenerativeAI(
-    model="gemini-3.6-flash",
+    model="gemini-3.5-flash",
     temperature=0.3,
 )
 
@@ -74,9 +74,7 @@ def classify_message(message: str) -> str:
     return category
 
 
-# ---------------------------------------------------------------------------
 # 3. Category-specific reply prompts (the routing step)
-# ---------------------------------------------------------------------------
 REPLY_SYSTEM_PROMPTS = {
     "bug_report": (
         "You are a support engineer replying to a bug report. "
@@ -154,7 +152,7 @@ def run_pipeline(message: str) -> None:
 
 # 5. Main - interactive terminal loop
 def main():
-    print("Issue Triage Assistant (powered by Gemini 3.5 Flash)")
+    print("Issue Triage Assistant")
     print("Type an issue message and press Enter. Type 'exit' to quit.\n")
 
     while True:
