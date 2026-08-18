@@ -1,0 +1,387 @@
+================================================================================
+ AUTOMATED REQUIREMENTS ELICITATION PIPELINE (LangChain + HITL)
+================================================================================
+
+Loaded case study from: case_study.txt
+
+================================================================================
+ STAGE 1: Stakeholder Identification
+================================================================================
+Direct use of automatic function calling (AFC) in Models.generate_content is not recommended. Instead, we recommend to use AFC in Chat.send_message. Similarly, direct use of AFC in Models.generate_content_stream is not recommended. Instead, we recommend to use AFC in Chat.send_message_stream.
+
+--- Generated Output (Stage 1) ---
+
+1. Students (General) - Primary users who will use the platform to browse menus, customize and place orders, pay digitally, track order status, and submit feedback.
+2. Hostel Students - Primary users who require the system to integrate their orders and billing with their specific hostel mess plans and subscriptions.
+3. Cafeteria Vendor (Management) - Business stakeholders who will use the system to manage menus, track inventory, forecast demand, and analyze sales trends and feedback.
+4. Cafeteria/Kitchen Staff - Operational users who will rely on the system to receive digital orders, manage food preparation, and update order status in real time.
+5. College Administration - Oversight stakeholders who require data-driven visibility into pricing compliance, hygiene standards, contract fulfillment, and overall student satisfaction.
+6. Hostel Warden's Office - Indirect stakeholders who need to track meal plans, billing, and usage patterns for hostel students integrated with the cafeteria system.
+7. Student Council - Indirect stakeholders who represent student interests and will benefit from a structured system that replaces informal complaint channels.
+
+--------------------------------------------------------------------------------
+
+Approve output? (Type 'y' to proceed, or type your feedback to regenerate): The list is good, but please remove "Digital Payment Service Providers" and "College IT Department". Let's strictly stick to the internal stakeholders mentioned directly or indirectly in the case study text.
+[Stage 1 REJECTED] Regenerating with your feedback...
+
+================================================================================
+ STAGE 1: Stakeholder Identification
+================================================================================
+
+--- Generated Output (Stage 1) ---
+
+1. Students (General) - Primary users who will use the system to browse menus, place and customize orders, make digital payments, track order status, and submit feedback.
+2. Hostel Students - A specific student segment whose cafeteria usage, billing, and meal plans are tied directly to their hostel mess subscriptions.
+3. Cafeteria Vendor - Business owners who will use the system to manage menus, track inventory, analyze sales trends, forecast demand, and receive structured customer feedback.
+4. Cafeteria Staff - Operational staff who prepare the food, fulfill digitized orders, and manage daily counter operations through the new system.
+5. College Administration - Oversight body responsible for monitoring pricing compliance, hygiene standards, contract fulfillment, and overall student satisfaction.
+6. Hostel Warden's Office - Administrative department that needs to track meal plans, billing, and usage patterns for hostel students integrated with the cafeteria system.
+7. Student Council - Student representative body that currently channels student complaints to the administration and has an interest in improved feedback mechanisms.
+
+--------------------------------------------------------------------------------
+Approve output? (Type 'y' to proceed, or type your feedback to regenerate): y
+[Stage 1 APPROVED] Proceeding to next stage...
+
+
+================================================================================
+ STAGE 2: Stakeholder Goals
+================================================================================
+
+--- Generated Output (Stage 2) ---
+
+### Students (General)
+- Goal/Need: To browse menus, place and customize orders, and make digital payments seamlessly through a digital platform.
+- Goal/Need: To track order status in real time and reduce physical queuing and waiting times at the cafeteria.
+- Goal/Need: To easily submit structured feedback and ratings on specific orders or dishes.
+- Pain Point: Unpredictably long queues and overcrowding near counters during peak hours, causing delays for students with limited time between classes.
+- Pain Point: Frequent order mistakes, such as wrong items, missed customizations, or late communication of unavailable items due to manual processing.
+- Pain Point: Slow checkout processes caused by manual cash and card handling at the counter.
+
+### Hostel Students
+- Goal/Need: To have cafeteria usage, billing, and meal plans directly tied to and integrated with their hostel mess subscriptions.
+- Goal/Need: To easily track their meal plan usage and subscription balance through the digital system.
+- Pain Point: Complexity and confusion in tracking meal plans, billing, and usage patterns under the current manual system.
+
+### Cafeteria Vendor
+- Goal/Need: To digitally manage menus, pricing, and ingredient inventory in an integrated system.
+- Goal/Need: To analyze sales trends and forecast daily demand accurately to optimize food preparation.
+- Goal/Need: To receive structured, actionable feedback on food quality, taste, and hygiene to address recurring issues.
+- Pain Point: High food wastage (over-preparation) or frequent stock-outs (under-preparation) due to an inability to forecast demand.
+- Pain Point: Inefficient operations caused by managing menu planning, pricing, inventory, and sales through manual registers or disconnected POS systems.
+- Pain Point: Lack of a structured feedback mechanism, leaving them reliant on informal word-of-mouth complaints that are difficult to act upon.
+
+### Cafeteria Staff
+- Goal/Need: To receive clear, digitized orders with precise customization details to minimize preparation errors.
+- Goal/Need: To manage daily counter operations and order fulfillment efficiently without the pressure of manual order-taking.
+- Pain Point: Extreme stress and time pressure during peak hours due to manual order handling and verbal communication.
+- Pain Point: Frequent mistakes in orders and customer frustration due to chaotic, manual workflows at the counter.
+
+### College Administration
+- Goal/Need: To monitor cafeteria operations, pricing compliance, and contract fulfillment through a continuous, data-driven process.
+- Goal/Need: To ensure hygiene and food-safety standards are consistently met by the vendor.
+- Goal/Need: To gain visibility into overall student satisfaction, order volumes, and feedback to ensure the cafeteria delivers value.
+- Pain Point: Lack of systematic oversight, forcing reliance on periodic manual inspections and informal, unstructured student complaints.
+
+### Hostel Warden's Office
+- Goal/Need: To efficiently track, manage, and reconcile meal plans, billing, and usage patterns for hostel students.
+- Goal/Need: To seamlessly integrate hostel mess subscription data with the y
+[Stage 2 APPROVED] Proceeding to next stage...
+
+
+================================================================================
+ STAGE 3: Elicitation Technique Selectionarent feedback mechanism that ensures student complaints are systematically captured and 
+================================================================================
+- Goal/Need: To access reliable data on recurring cafeteria issues to better advocate for student welfare to the administration an
+--- Generated Output (Stage 3) ---
+- Pain Point: The burden of manually collecting and channeling informal, unstructured student complaints (via word of mouth, email
+### Students (General) administration without supporting data.
+- Technique(s): Questionnaire/Survey and Prototyping
+- Justification: A **questionnaire/survey** combined with **prototyping** is ideal because students represent a large, highly distributed user base with limited individual availability, requiring scalable feedback on ordering pain points and hands-on validation of the mobile interface.to proceed, or type your feedback to regenerate): 
+
+### Hostel Students
+- Technique(s): Focus Group
+- Justification: A **focus group** is highly effective for hostel students because it allows us to efficiently gather shared requirements regarding their specific meal plan tracking and mess subscription integration needs within their limited free time outside of classes.
+
+### Cafeteria Vendor
+- Technique(s): Interview and Document Analysis
+- Justification: A semi-structured **interview** combined with **document analysis** of current sales logs is best suited for the vendor, who has high domain expertise but limited availability during service hours, to deeply understand their inventory management, menu planning, and sales forecasting needs.
+
+### Cafeteria Staff
+- Technique(s): Observation/Contextual Inquiry
+- Justification: **Observation/contextual inquiry** is the most appropriate technique for cafeteria staff because it allows the analyst to directly witness their high-pressure, peak-hour workflows and counter bottlenecks without disrupting their busy, hands-on operational duties.
+
+### College Administration
+- Technique(s): Interview
+- Justification: A structured **interview** is ideal for the college administration because of their highly restricted availability and their need to define high-level compliance, oversight, and reporting requirements for cafeteria operations.
+
+### Hostel Warden's Office
+- Technique(s): Document Analysis and Interview
+- Justification: **Document analysis** of current mess billing records combined with an **interview** is the best approach for the Warden's Office to map out their specific administrative workflows and data integration requirements within their structured office hours.
+
+### Student Council
+- Technique(s): Workshop
+- Justification: A collaborative **workshop** is the most effective technique for the Student Council because it leverages their representative role and collaborative nature to co-design a structured feedback mechanism and define the key data points needed for student advocacy.
+
+--------------------------------------------------------------------------------
+Approve output? (Type 'y' to proceed, or type your feedback to regenerate): y
+[Stage 3 APPROVED] Proceeding to next stage...
+
+
+================================================================================
+ STAGE 4: Elicitation Execution
+================================================================================
+
+--- Generated Output (Stage 4) ---
+
+### Students (General) — Questionnaire/Survey
+1. How often do you purchase food or drinks from the campus cafeteria? [Multiple-Choice: Daily, 2-3 times a week, Once a week, Rarely, Never]
+2. "The current queue times at the cafeteria during peak lunch hours (12:00 PM - 2:00 PM) are acceptable." [Likert-Scale: Strongly Disagree, Disagree, Neutral, Agree, Strongly Agree]
+3. "I would prefer pre-ordering my meals through a mobile application to avoid waiting in line." [Likert-Scale: Strongly Disagree, Disagree, Neutral, Agree, Strongly Agree]
+4. Which payment method do you use most frequently at the cafeteria? [Multiple-Choice: Cash, Credit/Debit Card, Mobile Wallet/UPI, Student ID Card/Meal Plan]
+5. "The digital menu options, daily specials, and pricing are easy to find and up-to-date." [Likert-Scale: Strongly Disagree, Disagree, Neutral, Agree, Strongly Agree]
+6. What is your primary reason for skipping meals at the cafeteria? [Multiple-Choice: Long lines/wait times, High prices, Lack of healthy options, Poor food quality, Inconvenient location, Other]
+7. "I would find a real-time crowd/occupancy tracker for the cafeteria dining hall helpful." [Likert-Scale: Strongly Disagree, Disagree, Neutral, Agree, Strongly Agree]
+8. What is the single biggest improvement you would like to see in the cafeteria's ordering and dining experience? [Open-Ended]
+
+### Hostel Students — Focus Group
+1. Discussion Topic 1: Icebreaker & Current Pain Points — Share your typical daily routine for getting meals and the biggest challenges you face with the current mess/cafeteria system.
+2. Discussion Topic 2: Mess Subscription & Meal Plan Tracking — How do you currently track your remaining mess card balances or weekly meal quotas, and what features would make this tracking easier?
+3. Discussion Topic 3: Weekend & Off-Peak Dining — Discuss your dining preferences during weekends or late nights when the main mess might be closed. How should the app address these off-peak needs?
+4. Discussion Topic 4: Group Ordering & Social Dining — How often do you order food together with other hostel residents, and what features (e.g., bill splitting, group orders) would support this?
+5. Discussion Topic 5: Feedback & Menu Customization — What is the best way for hostel students to collectively request menu changes or report issues with meal quality to the administration?
+
+### Cafeteria Vendor — Interview
+1. Target Interviewees: The Lead Cafeteria Vendor (Franchise Owner) and the Head Chef/Kitchen Manager.
+2. How do you currently receive, track, and manage daily food orders from students and staff?
+3. What are the biggest operational bottlenecks you experience during peak lunch hours (12:00 PM - 2:00 PM)?
+4. How do you currently manage inventory, and how do you forecast the quantity of ingredients needed for the next day or week?
+5. What specific reports or sales data do you need at the end of the day to reconcile payments and track revenue?
+6. How do you handle menu updates, daily specials, and out-of-stock items in your current system?
+7. What integration requirements do you have for your existing Point of Sale (POS) hardware or accounting software?
+8. How would you prefer to receive notifications for new incoming online orders (e.g., tablet sound, printed ticket, dashboard alert)?
+
+### Cafeteria Staff — Observation/Contextual Inquiry
+1. Observe the physical movement of staff members behind the counter during peak hours (12:00 PM - 1:30 PM) to identify physical bottlenecks and high-traffic zones.
+2. Record the average time taken by staff to process a single order from the moment a student speaks to the cashier to the moment they receive their food.
+3. Observe how staff handle order modifications, cancellations, or refund requests, noting the manual steps and tools involved.
+4. Record the communication methods used between the front-of-house cashiers and the back-of-house kitchen staff to pass order details.
+5. Observe how staff manage and update physical menu boards when items run out mid-service.
+6. Record the frequency and types of errors that occur during order handoff (e.g., wrong item given, missed orders) and how they are resolved.
+
+### College Administration — Interview
+1. Target Interviewees: Chief Financial Officer (CFO) / Director of Campus Operations and the IT Infrastructure Director.
+2. What are the primary compliance, safety, and hygiene standards that the cafeteria system must monitor and report on?
+3. What financial oversight and auditing capabilities does the administration require from the cafeteria's transaction data?
+4. How should the cafeteria system integrate with the existing student information system (SIS) and campus ID card database?
+5. What are the security and data privacy requirements (e.g., GDPR, local student data protection laws) for storing student payment and personal information?
+6. What SLA (Service Level Agreement) metrics do you want to enforce on the cafeteria vendor regarding order fulfillment and service quality?
+7. How should the system handle subsidies or financial aid meal plans for eligible students?
+
+### Hostel Warden's Office — Interview
+1. Target Interviewees: Chief Hostel Warden and the Hostel Accounts/Billing Administrator.
+2. How are hostel mess subscriptions and billing cycles currently managed and reconciled at the end of each month/semester?
+3. What specific data fields must be shared between the hostel database and the cafeteria ordering system to validate a student's active mess plan?
+4. How do you handle exceptions, such as students requesting refunds for missed meals due to official university leave or medical reasons?
+5. What administrative reports do you need to generate to track overall mess utilization and student attendance?
+6. How should the system handle guest meal passes or temporary subscriptions for visiting parents and non-hostel students?
+7. What level of access control and system permissions should the Warden's Office staff have within the new software platform?
+
+### Student Council — Workshop
+1. Agenda Topic 1: Welcome & Alignment (10 mins) — Define the workshop goals: Co-designing student feedback loops and identifying key advocacy data points for cafeteria operations.
+2. Agenda Topic 2: Student Feedback Mechanisms (20 mins) — Brainstorming session: What is the most effective, non-intrusive way for students to submit complaints or suggestions about food quality and service?
+3. Agenda Topic 3: Transparency & Data Sharing (20 mins) — Discussion prompt: What cafeteria performance metrics (e.g., average wait times, hygiene ratings, price trends) should be made publicly visible to the student body?
+4. Agenda Topic 4: Feature Prioritization (20 mins) — Interactive mapping: Prioritizing student-requested features (e.g., nutritional tracking, pre-ordering, group discounts) based on urgency and impact.
+5. Agenda Topic 5: Action Plan & Next Steps (10 mins) — Defining roles for Student Council representatives in promoting the new system and gathering ongoing student feedback.
+
+--------------------------------------------------------------------------------
+
+Approve output? (Type 'y' to proceed, or type your feedback to regenerate): This is a good draft, but you deviated from the techniques approved in Stage 3. Please correct the "Hostel Students" section to be a Focus Group agenda (with discussion prompts) instead of an Interview. Also, correct the "Cafeteria Vendor" section to be an Interview guide (with target interviewees and 5-8 questions) instead of Prototyping. Ensure all other stakeholders strictly match the techniques approved in Stage 3.
+[Stage 4 REJECTED] Regenerating with your feedback...
+
+================================================================================
+ STAGE 4: Elicitation Execution
+================================================================================
+
+--- Generated Output (Stage 4) ---
+
+### Students (General) — Questionnaire/Survey
+1. How often do you purchase food or drinks from the college cafeteria? (Multiple-Choice: Daily, 2-3 times a week, Once a week, Rarely, Never)
+2. "The current wait time to order and receive food at the cafeteria is acceptable." (Likert-Scale: Strongly Disagree, Disagree, Neutral, Agree, Strongly Agree)
+3. "I would prefer using a mobile app to pre-order my meals rather than waiting in line at the counter." (Likert-Scale: Strongly Disagree, Disagree, Neutral, Agree, Strongly Agree)
+4. What is your primary payment method when purchasing food at the cafeteria? (Multiple-Choice: Cash, UPI/Mobile Wallet, Credit/Debit Card, Student ID Card/Prepaid Account)
+5. Which feature would you find most valuable in a new cafeteria mobile app? (Multiple-Choice: Pre-ordering and scheduling meals, Live menu and stock updates, Digital receipts and expense tracking, Group ordering with friends)
+6. "I am satisfied with the current process of checking daily menu options and food availability." (Likert-Scale: Strongly Disagree, Disagree, Neutral, Agree, Strongly Agree)
+7. Describe the biggest frustration or bottleneck you currently experience when ordering food at the cafeteria. (Open-Ended)
+8. What specific features or improvements would make you use the cafeteria more frequently? (Open-Ended)
+
+### Hostel Students — Focus Group
+1. Topic 1: Icebreaker & Current Mess Subscription Experience (Prompt: "Describe your current daily routine for tracking your mess subscription and meals. What works well and what are the biggest pain points?")
+2. Topic 2: Meal Plan Flexibility & Customization (Prompt: "How would you like to manage opting out of meals or pausing your subscription when you are away? What rules or deadlines should govern this?")
+3. Topic 3: Integration of Mess and Cafeteria Systems (Prompt: "If you could use your mess subscription balance or meal credits at the regular cafeteria, how would you expect that process to work?")
+4. Topic 4: Notification and Menu Tracking Preferences (Prompt: "What kind of alerts or updates do you need regarding daily mess menus, dietary/allergen changes, or subscription renewals?")
+5. Topic 5: Feedback and Issue Resolution (Prompt: "How do you currently raise complaints about food quality or billing errors, and how should a digital system handle this?")
+
+### Cafeteria Vendor — Interview
+1. Target Interviewees: Cafeteria Owner/General Manager and Lead Inventory Manager.
+2. Can you walk us through your current process for planning the daily menu and forecasting demand for ingredients?
+3. What specific challenges do you face when tracking daily sales, and how do you reconcile cash versus digital payments at the end of the day?
+4. How do you currently manage inventory levels, and how do you handle situations where a popular menu item runs out mid-day?
+5. What reports or data insights (e.g., peak sales hours, popular items) would be most valuable for you to run your business more efficiently?
+6. How would you prefer to receive and manage pre-orders from students to ensure they do not disrupt walk-in customers?
+7. What are your key requirements for updating menu items, pricing, and availability in real-time on a digital platform?
+
+### Cafeteria Staff — Observation/Contextual Inquiry
+1. Observe and record the step-by-step physical workflow of a staff member from receiving an order to handing over the food during peak lunch hours (12:00 PM - 2:00 PM).
+2. Record the average time taken to process different payment types (cash, card, UPI) at the POS terminal and note any points of friction or delay.
+3. Observe how staff communicate order details to the kitchen (e.g., paper tickets, verbal shouting, digital screens) and identify any miscommunications or lost orders.
+4. Record the physical layout of the counter and kitchen area, noting how staff movement is restricted or optimized during high-volume periods.
+5. Observe how staff handle order modifications, cancellations, or refund requests when a customer changes their mind or an item is out of stock.
+6. Record the frequency and causes of bottlenecks at the pickup counter, specifically looking at how staff manage queue formation and order matching.
+
+### College Administration — Interview
+1. Target Interviewees: College Chief Financial Officer (CFO) and Director of Campus Operations.
+2. What are the primary compliance, safety, and hygiene standards that the cafeteria system must monitor and report on?
+3. What financial oversight and auditing capabilities does the administration require regarding cafeteria revenue and vendor rent/revenue-share agreements?
+4. How should the system handle student data privacy and security, particularly concerning student ID integration and payment processing?
+5. What are the key performance indicators (KPIs) the administration uses to evaluate the vendor's performance and overall student satisfaction?
+6. What level of administrative access or dashboard reporting do you require to oversee cafeteria operations without interfering in daily vendor management?
+7. Are there any specific institutional policies regarding subsidized meals, student financial aid integration, or emergency food vouchers that the system must accommodate?
+
+### Hostel Warden's Office — Interview
+1. Target Interviewees: Chief Hostel Warden and Hostel Administrative Officer.
+2. How is the current hostel mess billing data collected, processed, and reconciled with the college's central accounting system?
+3. What specific student data (e.g., room number, active enrollment status, dietary restrictions) must be synced between the Warden's database and the cafeteria/mess system?
+4. Can you describe the current process for handling mess rebates or refunds when students are officially absent (e.g., during holidays or medical leave)?
+5. What administrative challenges do you face when managing mess registration and subscription renewals at the start of each semester?
+6. What specific reports or audit trails do you need to generate to verify that students are receiving the meals they have paid for?
+7. How should the system handle disputes or discrepancies between a student's recorded mess attendance and their actual billing?
+
+### Student Council — Workshop
+1. Topic 1: Defining the Student Feedback Loop (Prompt: "How can we design a transparent, closed-loop feedback mechanism within the app so students feel their complaints about food quality or service are heard and acted upon?")
+2. Topic 2: Identifying Key Advocacy Metrics (Prompt: "What specific data points—such as average wait times, price fluctuations, or menu variety—does the Student Council need to effectively advocate for student interests to the administration?")
+3. Topic 3: Designing Peer-to-Peer Support and Community Features (Prompt: "How can the system facilitate student-led initiatives, such as meal-sharing, donating unused mess credits, or community food reviews?")
+4. Topic 4: Prioritizing Feature Rollout and Accessibility (Prompt: "Which app features are absolute 'must-haves' for the initial launch to ensure accessibility for all students, including those with dietary restrictions or disabilities?")
+5. Topic 5: Action Plan and Next Steps (Prompt: "What are the specific roles, responsibilities, and timelines for the Student Council to help promote app adoption and gather ongoing student feedback post-launch?")
+
+--------------------------------------------------------------------------------
+
+Approve output? (Type 'y' to proceed, or type your feedback to regenerate): y
+[Stage 4 APPROVED] Proceeding to next stage...
+
+
+================================================================================
+ STAGE 5: FR/NFR Generation
+================================================================================
+
+--- Generated Output (Stage 5) ---
+
+## Functional Requirements
+
+FR-1: The system shall allow general and hostel students to browse digital menus, customize food items based on preferences, and place orders. (Source: Students (General), Cafeteria Staff)
+
+FR-2: The system shall process digital payments using UPI, mobile wallets, credit/debit cards, and student ID cards. (Source: Students (General), Cafeteria Vendor)
+
+FR-3: The system shall provide real-time order status tracking and send push notifications to students when their food is ready for pickup. (Source: Students (General), Cafeteria Staff)
+
+FR-4: The system shall integrate with the hostel mess database to allow hostel students to pay for cafeteria meals using their active mess subscription balances or meal credits. (Source: Hostel Students, Hostel Warden's Office)
+
+FR-5: The system shall allow hostel students to view their meal plan usage history, remaining subscription balances, and submit requests to pause subscriptions or claim rebates for planned absences. (Source: Hostel Students, Hostel Warden's Office)
+
+FR-6: The system shall provide the Hostel Warden's Office with tools to reconcile hostel students' cafeteria usage and mess plan billing data with the college's central accounting system. (Source: Hostel Warden's Office, College Administration)
+
+FR-7: The system shall allow the cafeteria vendor to manage digital menus, update item pricing, and track ingredient inventory levels in real-time. (Source: Cafeteria Vendor)
+
+FR-8: The system shall generate daily demand forecasting reports and ingredient purchase recommendations based on historical sales trends, peak hours, and seasonal patterns. (Source: Cafeteria Vendor)
+
+FR-9: The system shall automatically mark menu items as "out of stock" on the student-facing interface when ingredient inventory levels fall below a vendor-defined threshold. (Source: Cafeteria Vendor, Cafeteria Staff)
+
+FR-10: The system shall allow students to submit structured ratings and feedback on food quality, taste, and hygiene for specific orders or dishes. (Source: Students (General), Student Council)
+
+FR-11: The system shall provide a feedback dashboard for the Student Council and Cafeteria Vendor to track recurring complaints, average wait times, and resolution progress. (Source: Student Council, Cafeteria Vendor)
+
+FR-12: The system shall provide the College Administration with a compliance dashboard to monitor vendor pricing limits, contract fulfillment, and overall student satisfaction metrics. (Source: College Administration)
+
+FR-13: The system shall generate financial audit trails and revenue reports to assist the College Administration in verifying vendor rent and revenue-share agreements. (Source: College Administration, Cafeteria Vendor)
+
+FR-14: The system shall automatically flag and escalate hygiene-related complaints or unauthorized price increases directly to the College Administration and the Cafeteria Vendor. (Source: College Administration, Student Council)
+
+FR-15: The system shall display digitized orders with precise customization details on a kitchen display system for the cafeteria staff to minimize preparation errors. (Source: Cafeteria Staff)
+
+## Non-Functional Requirements
+
+NFR-1: The system shall process digital payment transactions and return a success or failure confirmation within 3 seconds. (Category: Performance)
+
+NFR-2: The system shall update order status changes on the student's mobile interface within 1 second of a status change by the cafeteria staff. (Category: Performance)
+
+NFR-3: The system shall encrypt all student payment details, personal data, and credentials in transit and at rest using industry-standard encryption protocols (AES-256 and TLS 1.3). (Category: Security)
+
+NFR-4: The system shall restrict access to administrative dashboards, financial reports, and student records using Role-Based Access Control (RBAC). (Category: Security)
+
+NFR-5: The system shall provide an intuitive, responsive user interface that allows students to complete a food order in fewer than 4 screen taps. (Category: Usability)
+
+NFR-6: The system shall maintain a 99.9% uptime during the cafeteria's operational hours of 6:00 AM to 11:00 PM daily. (Category: Reliability)
+
+NFR-7: The system shall support at least 1,000 concurrent active users placing orders during peak lunch hours (12:00 PM to 2:00 PM) without any degradation in response times. (Category: Scalability)
+
+NFR-8: The system shall synchronize offline transaction data to the central database within 5 minutes of network restoration in the event of a local internet connectivity failure. (Category: Reliability)
+
+----------------------------------------------------------------------------y---
+[Stage 5 APPROVED] Proceeding to next stage...
+Approve output? (Type 'y' to proceed, or type your feedback to regenerate): 
+
+================================================================================
+ PIPELINE COMPLETE — FINAL FR/NFR OUTPUT
+================================================================================
+
+## Functional Requirements
+
+FR-1: The system shall allow general and hostel students to browse digital menus, customize food items based on preferences, and place orders. (Source: Students (General), Cafeteria Staff)
+
+FR-2: The system shall process digital payments using UPI, mobile wallets, credit/debit cards, and student ID cards. (Source: Students (General), Cafeteria Vendor)
+
+FR-3: The system shall provide real-time order status tracking and send push notifications to students when their food is ready for pickup. (Source: Students (General), Cafeteria Staff)
+
+FR-4: The system shall integrate with the hostel mess database to allow hostel students to pay for cafeteria meals using their active mess subscription balances or meal credits. (Source: Hostel Students, Hostel Warden's Office)
+
+FR-5: The system shall allow hostel students to view their meal plan usage history, remaining subscription balances, and submit requests to pause subscriptions or claim rebates for planned absences. (Source: Hostel Students, Hostel Warden's Office)
+
+FR-6: The system shall provide the Hostel Warden's Office with tools to reconcile hostel students' cafeteria usage and mess plan billing data with the college's central accounting system. (Source: Hostel Warden's Office, College Administration)
+
+FR-7: The system shall allow the cafeteria vendor to manage digital menus, update item pricing, and track ingredient inventory levels in real-time. (Source: Cafeteria Vendor)
+
+FR-8: The system shall generate daily demand forecasting reports and ingredient purchase recommendations based on historical sales trends, peak hours, and seasonal patterns. (Source: Cafeteria Vendor)
+
+FR-9: The system shall automatically mark menu items as "out of stock" on the student-facing interface when ingredient inventory levels fall below a vendor-defined threshold. (Source: Cafeteria Vendor, Cafeteria Staff)
+
+FR-10: The system shall allow students to submit structured ratings and feedback on food quality, taste, and hygiene for specific orders or dishes. (Source: Students (General), Student Council)
+
+FR-11: The system shall provide a feedback dashboard for the Student Council and Cafeteria Vendor to track recurring complaints, average wait times, and resolution progress. (Source: Student Council, Cafeteria Vendor)
+
+FR-12: The system shall provide the College Administration with a compliance dashboard to monitor vendor pricing limits, contract fulfillment, and overall student satisfaction metrics. (Source: College Administration)
+
+FR-13: The system shall generate financial audit trails and revenue reports to assist the College Administration in verifying vendor rent and revenue-share agreements. (Source: College Administration, Cafeteria Vendor)
+
+FR-14: The system shall automatically flag and escalate hygiene-related complaints or unauthorized price increases directly to the College Administration and the Cafeteria Vendor. (Source: College Administration, Student Council)
+
+FR-15: The system shall display digitized orders with precise customization details on a kitchen display system for the cafeteria staff to minimize preparation errors. (Source: Cafeteria Staff)
+
+## Non-Functional Requirements
+
+NFR-1: The system shall process digital payment transactions and return a success or failure confirmation within 3 seconds. (Category: Performance)
+
+NFR-2: The system shall update order status changes on the student's mobile interface within 1 second of a status change by the cafeteria staff. (Category: Performance)
+
+NFR-3: The system shall encrypt all student payment details, personal data, and credentials in transit and at rest using industry-standard encryption protocols (AES-256 and TLS 1.3). (Category: Security)
+
+NFR-4: The system shall restrict access to administrative dashboards, financial reports, and student records using Role-Based Access Control (RBAC). (Category: Security)
+
+NFR-5: The system shall provide an intuitive, responsive user interface that allows students to complete a food order in fewer than 4 screen taps. (Category: Usability)
+
+NFR-6: The system shall maintain a 99.9% uptime during the cafeteria's operational hours of 6:00 AM to 11:00 PM daily. (Category: Reliability)
+
+NFR-7: The system shall support at least 1,000 concurrent active users placing orders during peak lunch hours (12:00 PM to 2:00 PM) without any degradation in response times. (Category: Scalability)
+
+NFR-8: The system shall synchronize offline transaction data to the central database within 5 minutes of network restoration in the event of a local internet connectivity failure. (Category: Reliability)
+
+Full pipeline state (all approved stage outputs) saved to: pipeline_state.json
+(venv) PS D:\coding\IT314\Lab_3> 
